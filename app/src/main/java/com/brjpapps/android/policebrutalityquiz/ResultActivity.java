@@ -22,15 +22,11 @@ public class ResultActivity extends AppCompatActivity {
         btnRestart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(getApplicationContext(), SecondActivity.class);
+                Intent in = new Intent(getApplicationContext(), MainActivity.class);
+                in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                in.putExtra("EXIT", true);
                 startActivity(in);
-
             }
         });
-
-        Intent i = new Intent(ResultActivity.this,MainActivity.class);
-        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        i.putExtra("EXIT", true);
-        startActivity(i);
     }
 }
