@@ -22,5 +22,12 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(in);
             }
         });
+
+        if (getIntent().getBooleanExtra("EXIT", false))
+        {
+            Intent i = new Intent(SecondActivity.this,MainActivity.class);
+            startActivity(i);
+            finish();
+        }
     }
 }

@@ -24,7 +24,13 @@ public class ResultActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent in = new Intent(getApplicationContext(), SecondActivity.class);
                 startActivity(in);
+
             }
         });
+
+        Intent i = new Intent(ResultActivity.this,MainActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.putExtra("EXIT", true);
+        startActivity(i);
     }
 }
